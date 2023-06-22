@@ -65,7 +65,7 @@ header nav a:hover {
 
 .hero {
     height: 800px;
-    background-image: url("./assets/images/password-generator-light-of-twelve-hologram-hacker.jpg");
+    background-image: url("/assets/images/password-generator-light-of-twelve-hologram-hacker.jpg");
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +79,7 @@ header nav a:hover {
 
 .second-hero {
     height: 300px;
-    background-image: url("./assets/images/password-generator-light-of-twelve-computer-led.jpg");
+    background-image: url("/assets/images/password-generator-light-of-twelve-computer-led.jpg");
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
@@ -90,7 +90,6 @@ header nav a:hover {
     background-size: cover;
     background-position: center;
     position: relative;
-    margin-top: 0;
 }
 
 .my-custom-h2 {
