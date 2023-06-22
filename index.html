@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel='stylesheet' href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1><ion-icon name="key-outline"></ion-icon>SecuriKey</h1>
+        <nav>
+            <a href="https://github.com/lightoftwelve" target="_blank">GITHUB</a>
+            <a href="https://www.linkedin.com/in/victoria-alawi-872984250/" target="_blank">LINKEDIN</a>
+            <a href="https://lightoftwelve.github.io/portfolio/" target="_blank">PORTFOLIO</a>
+            <a href="https://lightoftwelve.com" target="_blank">E-COMMERCE WEBSITE</a>
+            <a href="https://lightoftwelve.com/blogs/learning-about-tarot" target="_blank">SEO COPY</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-overlay">
+            <h2 class="my-custom-h2">SecuriKey:<br>High-Quality<br>Passwords</h2>
+            <p><i>Your Personalized Digital Gateway Guardian</i></p>
+        </div>
+        <div>
+            <a href="#arrow-down">
+                <ion-icon name="arrow-down-circle" aria-label="Scroll down" class="white-arrow"
+                    style="font-size: 50px;"></ion-icon>
+                <ion-icon name="arrow-down-circle" aria-label="Scroll down" class="black-arrow"
+                    style="font-size: 50px;"></ion-icon>
+            </a>
+        </div>
+    </section>
+    <section>
+        <div class="founder-section">
+            <div class="founder-width">
+                <div class="founder-item">
+                    <ion-icon name="lock-closed-outline" style="font-size: 40px; color: black;"></ion-icon>
+                </div>
+                <div class="founder-item">
+                    <h2>A Word From The Creator</h2>
+                </div>
+                <div class="founder-item">
+                    <p>Welcome to SecuriKey, your hub for password security. Think of your passwords as your personal
+                        digital
+                        bodyguards. With SecuriKey, we're geared to arm these bodyguards with the strength they
+                        need
+                        to fend off prying eyes.</p>
+
+                    <p>Who said cybersecurity has to be boring? Our special 'Fruit Salad' mode ensures that your journey
+                        towards stronger passwords is both amusing and engaging. So, are you prepared to fortify your
+                        digital world? Embark on this voyage with us, and together, let's make the online universe a
+                        safer
+                        place!</p>
+                </div>
+                <div class="founder-item-signature">
+                    <ion-icon name="checkmark-done-outline" style="font-size: 40px; color: black;"></ion-icon>
+                    <div>
+                        <p style="margin: 0;">Victoria Alawi</p>
+                        <p style="margin: 0;">Founder of Light of Twelve</p>
+                        <p style="margin: 0;">www.lightoftwelve.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="container-styling">
+            <div class="second-hero">
+                <h3 class="my-custom-h3">Let's Get<br>Started</h3>
+            </div>
+            <div class="custom-container px-0">
+                <div class="generatePasswordSection">
+                    <form id="passwordForm">
+                        <!-- input form -->
+                        <div class="input-group">
+                            <input id="length" type="number" min="5" max="128" value="8">
+                            <input id="password" type="password" class="form-control" placeholder="generate password"
+                                aria-label="Password field">
+                            <!-- regenerate password -->
+                            <button id="generate" type="button">
+                                <ion-icon name="repeat-outline" aria-label="Regenerate password">Generate
+                                    Password</ion-icon>
+                            </button>
+                            <!-- toggles visibility of the generated password -->
+                            <button id="reveal" type="button" onclick="revealPassword()">
+                                <ion-icon name="eye-outline" aria-label="Show password">Reveal Password</ion-icon>
+                            </button>
+                        </div>
+                        <div id="error"></div>
+                    </form>
+                </div>
+
+                <div class="row no-padding-row">
+                    <!--Pick the length Range-->
+                    <div class="col" id="arrow-down">
+                        <label for="customRange2" class="form-label" label style="font-size: 20px;">Password
+                            Length</label>
+                        <input type="range" class="form-range" min="5" max="128" id="customRange2">
+                        <p id="strength"></p>
+                    </div>
+
+                    <!-- Radio Boxes -->
+                    <div class="radioCol">
+                        <label for="customRange2" class="form-label" label style="font-size: 20px;">Type of
+                            Password</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="passwordType" id="fruit-salad"
+                                value="fruit" checked>
+                            <label class="form-check-label" for="fruit-salad">
+                                Fruit Salad
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="passwordType" id="all-characters"
+                                value="all">
+                            <label class="form-check-label" for="all-characters">
+                                All Characters
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="checkCol">
+                        <label for="customRange2" class="form-label" label style="font-size: 20px;">Character
+                            Selection</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkboxUppercase">
+                            <label class="form-check-label" for="checkboxUppercase">
+                                Uppercase
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkboxLowercase">
+                            <label class="form-check-label" for="checkboxLowercase">
+                                Lowercase
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkboxNumbers">
+                            <label class="form-check-label" for="checkboxNumbers">
+                                Numbers
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkboxSymbols">
+                            <label class="form-check-label" for="checkboxSymbols">
+                                Symbols
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h3>Victoria Alawi | www.lightoftwelve.com | 2023</h3>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
